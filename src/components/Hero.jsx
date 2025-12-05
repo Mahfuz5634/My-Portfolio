@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
-import {
-  motion,
-  useMotionValue,
-  useTransform,
-  animate,
-} from "framer-motion";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import image from "../assets/myPhoto.png";
+import { FiDownload } from "react-icons/fi";
+import { FiMail, FiPhone } from "react-icons/fi";
+
+
 
 // Text animation
 const fadeUp = {
@@ -32,9 +31,7 @@ const staggerContainer = {
 const TypingText = ({ text }) => {
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
-  const displayText = useTransform(rounded, (latest) =>
-    text.slice(0, latest)
-  );
+  const displayText = useTransform(rounded, (latest) => text.slice(0, latest));
 
   useEffect(() => {
     const controls = animate(count, text.length, {
@@ -84,27 +81,30 @@ const Hero = () => {
       </motion.div>
 
       {/* content wrapper */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-14 md:gap-18">
-        {/* LEFT TEXT */}
+      <div className="relative z-10 max-w-6xl mx-auto px-6 flex flex-col-reverse md:flex-row items-center gap-14 md:gap-18">
+        {/* LEFT TEXT (below image on mobile, left on desktop) */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="flex-1"
+          className="flex-1 relative"
         >
+          {/* subtle glow card behind text */}
+          <div className="pointer-events-none absolute -inset-x-4 -inset-y-6 rounded-3xl bg-gradient-to-br from-blue-500/10 via-slate-900/60 to-slate-950/80 blur-2xl" />
+
           <motion.div
             variants={fadeUp}
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 mb-5 backdrop-blur-md"
+            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 mb-5 backdrop-blur-md relative"
           >
             <span className="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
             <p className="text-xs md:text-sm text-slate-200/80">
-              Available for onsite & remote roles
+              Available for onsite &amp; remote roles
             </p>
           </motion.div>
 
           <motion.h1
             variants={fadeUp}
-            className="text-4xl sm:text-5xl md:text-[2.9rem] lg:text-[3.3rem] font-semibold tracking-tight text-slate-50 mb-4 leading-tight"
+            className="relative text-4xl sm:text-5xl md:text-[2.9rem] lg:text-[3.3rem] font-semibold tracking-tight text-slate-50 mb-4 leading-tight"
           >
             Hi, <span className="text-slate-300">I&apos;m</span>{" "}
             <span className="bg-gradient-to-r from-blue-400 via-sky-400 to-indigo-400 bg-clip-text text-transparent">
@@ -115,19 +115,20 @@ const Hero = () => {
 
           <motion.p
             variants={fadeUp}
-            className="text-base sm:text-lg md:text-[1.05rem] text-slate-300/90 leading-relaxed max-w-xl"
+            className="relative text-base sm:text-lg md:text-[1.05rem] text-slate-300/90 leading-relaxed max-w-xl"
           >
             <TypingText text="Fullstack Developer • Competitive Programmer" />
             <br />
             <span className="text-sm sm:text-base text-slate-300/80">
-              I build modern web apps with clean UI, strong problem solving,
-              and smooth micro‑interactions.
+              I build modern web apps with clean UI, strong problem solving, and
+              smooth micro‑interactions.
             </span>
           </motion.p>
 
+          {/* CTA row with Resume */}
           <motion.div
             variants={fadeUp}
-            className="mt-7 flex flex-wrap items-center gap-4"
+            className="relative mt-7 flex flex-wrap items-center gap-4"
           >
             <motion.a
               whileHover={{ scale: 1.05, y: -1 }}
@@ -139,6 +140,17 @@ const Hero = () => {
               <span className="text-base">↗</span>
             </motion.a>
 
+            {/* Resume button – served from /public */}
+            <motion.a
+              whileHover={{ scale: 1.05, y: -1 }}
+              whileTap={{ scale: 0.96, y: 0 }}
+              href="https://drive.google.com/uc?export=download&id=1yRNYJD_NwcNTgKdfMTFhsKB8zAqFpybx"
+              className="inline-flex items-center gap-2 rounded-xl border border-emerald-400/70 bg-emerald-500/10 px-6 py-3 text-sm sm:text-base font-semibold text-emerald-200 backdrop-blur-md hover:border-emerald-300 hover:bg-emerald-500/20 transition"
+            >
+              <span>Resume</span>
+              <FiDownload className="text-base" />
+            </motion.a>
+
             <motion.a
               whileHover={{ scale: 1.05, y: -1 }}
               whileTap={{ scale: 0.96, y: 0 }}
@@ -146,13 +158,14 @@ const Hero = () => {
               className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-sm sm:text-base font-semibold text-slate-100/90 backdrop-blur-md hover:border-blue-400/70 transition"
             >
               <span>Contact Me</span>
+              <FiPhone className="text-emerald-400 text-sm" />
             </motion.a>
           </motion.div>
 
           {/* Social links */}
           <motion.div
             variants={fadeUp}
-            className="mt-5 flex items-center gap-4 text-sm text-slate-300/80"
+            className="relative mt-5 flex items-center gap-4 text-sm text-slate-300/80"
           >
             <span className="text-xs sm:text-sm uppercase tracking-[0.2em] text-slate-400">
               Find me on
@@ -179,7 +192,7 @@ const Hero = () => {
 
           <motion.div
             variants={fadeUp}
-            className="mt-4 flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-300/80"
+            className="relative mt-4 flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-300/80"
           >
             <div className="flex -space-x-2">
               <span className="h-8 w-8 rounded-full bg-blue-500/70 border border-slate-900" />
@@ -190,7 +203,7 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* RIGHT IMAGE */}
+        {/* RIGHT IMAGE (on top on mobile because of flex-col-reverse) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 16 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}

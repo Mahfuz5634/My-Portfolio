@@ -11,11 +11,11 @@ export default function Contact() {
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",   // e.g. "service_xxxxxx"
-        "YOUR_TEMPLATE_ID",  // e.g. "template_xxxxxx"
+        "service_rd8t63u", // e.g. "service_xxxxxx"
+        "template_7s064ds", // e.g. "template_xxxxxx"
         formRef.current,
         {
-          publicKey: "YOUR_PUBLIC_KEY", // from EmailJS dashboard
+          publicKey: "zd0PgJxsACTMXoNVn",
         }
       )
       .then(
@@ -30,8 +30,8 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20">
-      <div className="max-w-3xl mx-auto">
+    <section id="contact" className="py-10">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 mb-6 backdrop-blur">
           <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
           <span className="text-xs font-medium uppercase tracking-[0.2em] text-slate-300/80">
@@ -42,10 +42,22 @@ export default function Contact() {
         <h2 className="text-2xl sm:text-3xl font-semibold mb-2 text-slate-50">
           Let&apos;s work together
         </h2>
-        <p className="text-sm sm:text-base text-slate-300/85 mb-8">
+        <p className="text-sm sm:text-base text-slate-300/85 mb-4 max-w-2xl">
           Have an idea, project, or opportunity? Send a message and it will go
           directly to my inbox.
         </p>
+
+        {/* contact info row */}
+        <div className="mb-6 flex flex-wrap gap-4 text-xs sm:text-sm text-slate-300/90">
+          <span className="inline-flex items-center gap-2 rounded-full bg-slate-900/70 border border-white/10 px-3 py-1.5">
+            <span className="h-2 w-2 rounded-full bg-blue-400" />
+            <span>Email: mahfuzur3456@gmail.com</span>
+          </span>
+          <span className="inline-flex items-center gap-2 rounded-full bg-slate-900/70 border border-white/10 px-3 py-1.5">
+            <span className="h-2 w-2 rounded-full bg-emerald-400" />
+            <span>Phone: 01687848893</span>
+          </span>
+        </div>
 
         <form
           ref={formRef}
@@ -54,9 +66,7 @@ export default function Contact() {
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label className="block text-sm text-slate-200 mb-2">
-                Name
-              </label>
+              <label className="block text-sm text-slate-200 mb-2">Name</label>
               <input
                 type="text"
                 name="user_name"
@@ -66,9 +76,7 @@ export default function Contact() {
               />
             </div>
             <div>
-              <label className="block text-sm text-slate-200 mb-2">
-                Email
-              </label>
+              <label className="block text-sm text-slate-200 mb-2">Email</label>
               <input
                 type="email"
                 name="user_email"
@@ -80,9 +88,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <label className="block text-sm text-slate-200 mb-2">
-              Subject
-            </label>
+            <label className="block text-sm text-slate-200 mb-2">Subject</label>
             <input
               type="text"
               name="subject"
@@ -92,9 +98,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <label className="block text-sm text-slate-200 mb-2">
-              Message
-            </label>
+            <label className="block text-sm text-slate-200 mb-2">Message</label>
             <textarea
               name="message"
               required
@@ -118,10 +122,10 @@ export default function Contact() {
           <p className="text-xs text-slate-400 mt-3">
             Or email me directly at{" "}
             <a
-              href="mailto:mahfuzur3456@example.com"
+              href="mailto:mahfuzur3456@gmail.com"
               className="text-blue-400 underline underline-offset-2"
             >
-              mahfuz@example.com
+              mahfuzur3456@gmail.com
             </a>
             .
           </p>

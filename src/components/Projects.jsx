@@ -13,7 +13,7 @@ const Projects = () => {
     {
       name: "Kidz Corner",
       tagline: "Toy e-commerce platform",
-      desc: "Toy marketplace with secure auth, profile management, order history, and protected routes.",
+      desc: "A full-featured toy e-commerce platform where users can browse toys by category, view detailed product pages, and manage their own collection. It includes secure authentication, profile-based toy management, wishlist-like features, and protected routes for adding or editing items, all wrapped in a playful, responsive UI.",
       tech: [
         "React",
         "React Router",
@@ -22,70 +22,70 @@ const Projects = () => {
         "DaisyUI",
       ],
       live: "https://kidz-corner-webapp.netlify.app/",
-      github: "https://github.com/your-username/kidz-corner",
+      github: "https://github.com/Mahfuz5634/Kidz-Corner-With-Firebase",
       image: kidzImg,
     },
     {
       name: "Smart Utility BD",
       tagline: "Utility bills management",
-      desc: "MERN app to track and pay Electricity, Gas, Water, and Internet bills with CRUD and PDF reports.",
+      desc: "A MERN-based utility management system that centralizes monthly Electricity, Gas, Water, and Internet bills. Users can add, update, and delete bills in real time, filter by category or status, and generate downloadable PDF summaries, making bill tracking and history review much easier.",
       tech: ["React", "Firebase", "Tailwind CSS", "DaisyUI"],
       live: "https://smart-utility-bd.netlify.app/",
-      github: "https://github.com/your-username/smart-utility-bd",
+      github: "https://github.com/Mahfuz5634/SmartUtility-Project-ClientPart",
       image: utilityImg,
     },
     {
       name: "Dragon News",
       tagline: "News portal with auth",
-      desc: "React news portal with category-based browsing and Firebase email/password authentication.",
+      desc: "A modern news portal that lets users explore articles by category and read full stories after signing in. The app uses Firebase email/password authentication, protected routes for detailed news views, and a clean layout to keep reading focused and distraction-free.",
       tech: ["React", "React Router", "Firebase Auth", "Tailwind CSS", "DaisyUI"],
       live: "https://dragon-news-firebase22.netlify.app/",
-      github: "https://github.com/your-username/dragon-news",
+      github: "https://github.com/Mahfuz5634/Dragon-News-With-Firebase-Project",
       image: dragonImg,
     },
     {
       name: "Book Vibe",
       tagline: "Book explorer",
-      desc: "React app for discovering and exploring books with clean, responsive UI and routing.",
+      desc: "A book discovery interface where users can browse a curated collection of books, see detailed information such as author and rating, and switch between different sections using React Router. The UI focuses on readability and responsive layout to make exploring books feel smooth on any device.",
       tech: ["React", "React Router", "Tailwind CSS"],
       live: "https://book-vibe-with-react-20022.netlify.app/",
-      github: "https://github.com/your-username/book-vibe",
+      github: "https://github.com/Mahfuz5634/Book-Vibe-With-React-Router-Project",
       image: bookImg,
     },
     {
       name: "Customer Support App",
       tagline: "Support ticket manager",
-      desc: "React-based app to manage support tickets with status tracking, updates, and API integration.",
+      desc: "A support dashboard for managing customer tickets with clear status tracking and updates. Users can view ticket details, follow their progress through different states, and interact with data coming from APIs, showcasing structured state management and responsive layout.",
       tech: ["React", "JavaScript", "API", "Tailwind CSS", "DaisyUI"],
       live: "https://customer-support-react-2200.netlify.app/",
-      github: "https://github.com/your-username/customer-support-app",
+      github: "https://github.com/Mahfuz5634/Customer-Support-Zone-Using-React",
       image: supportImg,
     },
     {
       name: "Eco World Project",
       tagline: "Plants & eco products",
-      desc: "JS-powered site to showcase plants and eco products, focusing on DOM work and fetch API.",
+      desc: "A JavaScript-driven landing page that highlights plants and eco-friendly products with interactive cards and dynamic content loading. It focuses on DOM manipulation, fetch API usage, and clean component sections to simulate a small product catalogue experience.",
       tech: ["JavaScript", "HTML5", "CSS3", "Fetch API", "Tailwind"],
       live: "https://mahfuz5634.github.io/Eco-World-Project/",
-      github: "https://github.com/mahfuz5634/Eco-World-Project",
+      github: "https://github.com/Mahfuz5634/Eco-World-Project",
       image: ecoImg,
     },
     {
       name: "English Shikhi",
       tagline: "Learn English vocabulary",
-      desc: "Interactive app to learn vocabulary with pronunciation, examples, synonyms, and TTS.",
+      desc: "An interactive vocabulary learning tool that helps users practice English words with meanings, example sentences, synonyms, and text-to-speech playback. It demonstrates working with public APIs, DOM updates, and UX aimed at making learning lightweight and engaging.",
       tech: ["JavaScript", "HTML5", "CSS3", "Fetch API", "Tailwind CSS"],
       live: "https://mahfuz5634.github.io/English-Shikhi-Project/",
-      github: "https://github.com/mahfuz5634/English-Shikhi-Project",
+      github: "https://github.com/Mahfuz5634/English-Shikhi-Project",
       image: englishImg,
     },
     {
       name: "Tea House Project",
       tagline: "Tea shop landing page",
-      desc: "Practice site with a tea house theme, product showcase, and client reviews.",
+      desc: "A static but polished tea shop landing page that showcases different tea products, featured sections, and client testimonials. It focuses on layout, typography, and responsive design using only HTML and CSS to create a visually pleasing marketing page.",
       tech: ["HTML", "CSS"],
       live: "https://mahfuz5634.github.io/Tea-House-Project/",
-      github: "https://github.com/mahfuz5634/Tea-House-Project",
+      github: "https://github.com/Mahfuz5634/Tea-House-Project",
       image: teaImg,
     },
   ];
@@ -100,8 +100,8 @@ const Projects = () => {
   const goNext = () => setPage((p) => Math.min(totalPages, p + 1));
 
   return (
-    <section id="projects" className="py-20">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="py-10">
+      <div className="max-w-6xl mx-auto px-6">
         {/* label */}
         <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 mb-6 backdrop-blur">
           <span className="h-2 w-2 rounded-full bg-blue-400 animate-pulse" />
