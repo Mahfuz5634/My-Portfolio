@@ -26,11 +26,9 @@ const Skills = () => {
     { name: "Git", icon: SiGit },
     { name: "HTML", icon: SiHtml5 },
     { name: "CSS", icon: SiCss3 },
-    // C has no SimpleIcon; you can reuse C++ icon or skip
     { name: "C++", icon: SiCplusplus },
     { name: "Python", icon: SiPython },
-    // Java has no SimpleIcon in this set; you can either skip it
-    // or reuse another generic icon component of your choice
+    
   ];
 
   return (
