@@ -52,9 +52,7 @@ const TypingText = ({ text }) => {
 
 const Hero = () => {
   return (
-    <ScrollReveal>
       <section className="relative overflow-hidden py-24 md:py-28">
-      {/* Floating Particles Background */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.5 }}
@@ -82,16 +80,13 @@ const Hero = () => {
         ))}
       </motion.div>
 
-      {/* content wrapper */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 flex flex-col-reverse md:flex-row items-center gap-14 md:gap-18">
-        {/* LEFT TEXT (below image on mobile, left on desktop) */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
           className="flex-1 relative"
         >
-          {/* subtle glow card behind text */}
           <div className="pointer-events-none absolute -inset-x-4 -inset-y-6 rounded-3xl bg-gradient-to-br from-blue-500/10 via-slate-900/60 to-slate-950/80 blur-2xl" />
 
           <motion.div
@@ -127,7 +122,6 @@ const Hero = () => {
             </span>
           </motion.p>
 
-          {/* CTA row with Resume */}
           <motion.div
             variants={fadeUp}
             className="relative mt-7 flex flex-wrap items-center gap-4"
@@ -142,7 +136,6 @@ const Hero = () => {
               <span className="text-base">↗</span>
             </motion.a>
 
-            {/* Resume button – served from /public */}
             <motion.a
               whileHover={{ scale: 1.05, y: -1 }}
               whileTap={{ scale: 0.96, y: 0 }}
@@ -164,7 +157,6 @@ const Hero = () => {
             </motion.a>
           </motion.div>
 
-          {/* Social links */}
           <motion.div
             variants={fadeUp}
             className="relative mt-5 flex items-center gap-4 text-sm text-slate-300/80"
@@ -205,7 +197,6 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* RIGHT IMAGE (on top on mobile because of flex-col-reverse) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 16 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -236,7 +227,6 @@ const Hero = () => {
         </motion.div>
       </div>
     </section>
-    </ScrollReveal>
   );
 };
 
