@@ -6,8 +6,6 @@ import { FiDownload } from "react-icons/fi";
 import { FiMail, FiPhone } from "react-icons/fi";
 import ScrollReveal from "../ScrollBar/Scrollbar";
 
-
-
 // Text animation
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -52,7 +50,7 @@ const TypingText = ({ text }) => {
 
 const Hero = () => {
   return (
-      <section className="relative overflow-hidden py-24 md:py-28">
+    <section className="relative overflow-hidden py-24 md:py-28">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.5 }}
@@ -136,10 +134,10 @@ const Hero = () => {
               <span className="text-base">↗</span>
             </motion.a>
 
-            <motion.a
+           <motion.a
               whileHover={{ scale: 1.05, y: -1 }}
               whileTap={{ scale: 0.96, y: 0 }}
-              href="https://drive.google.com/uc?export=download&id=1yRNYJD_NwcNTgKdfMTFhsKB8zAqFpybx"
+              href="https://drive.google.com/uc?export=download&id=19txK2JSGkRYKzEDmlZ7a7ZDVNV79eyZ3"
               className="inline-flex items-center gap-2 rounded-xl border border-emerald-400/70 bg-emerald-500/10 px-6 py-3 text-sm sm:text-base font-semibold text-emerald-200 backdrop-blur-md hover:border-emerald-300 hover:bg-emerald-500/20 transition"
             >
               <span>Resume</span>
