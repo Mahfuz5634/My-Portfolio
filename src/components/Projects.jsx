@@ -7,9 +7,30 @@ import supportImg from "../assets/customer.png";
 import ecoImg from "../assets/eco.png";
 import englishImg from "../assets/english.png";
 import teaImg from "../assets/tea.png";
+import loanlinkImg from "../assets/microcredx.png"
 
 const Projects = () => {
   const projects = [
+    {
+      name: "MicroCredX",
+      tagline: "Microloan request & approval tracker system",
+      desc: "A comprehensive web-based microloan management system designed for NGOs and microloan providers. It enables borrowers to apply for loans, managers to review and approve applications, and admins to manage users, loans, and system settings through secure, role-based dashboards. The platform includes payment integration, real-time tracking, and a modern, responsive UI.",
+      tech: [
+        "React",
+        "React Router",
+        "Firebase Auth",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Stripe",
+        "Tailwind CSS",
+        "Framer Motion",
+      ],
+      live: "https://microcredx.vercel.app/",
+      github: "https://github.com/Mahfuz5634/MicroCredX-Project-FrontendPart",
+      image: loanlinkImg,
+    },
+
     {
       name: "Kidz Corner",
       tagline: "Toy e-commerce platform",
@@ -38,7 +59,13 @@ const Projects = () => {
       name: "Dragon News",
       tagline: "News portal with auth",
       desc: "A modern news portal that lets users explore articles by category and read full stories after signing in. The app uses Firebase email/password authentication, protected routes for detailed news views, and a clean layout to keep reading focused and distraction-free.",
-      tech: ["React", "React Router", "Firebase Auth", "Tailwind CSS", "DaisyUI"],
+      tech: [
+        "React",
+        "React Router",
+        "Firebase Auth",
+        "Tailwind CSS",
+        "DaisyUI",
+      ],
       live: "https://dragon-news-firebase22.netlify.app/",
       github: "https://github.com/Mahfuz5634/Dragon-News-With-Firebase-Project",
       image: dragonImg,
@@ -49,7 +76,8 @@ const Projects = () => {
       desc: "A book discovery interface where users can browse a curated collection of books, see detailed information such as author and rating, and switch between different sections using React Router. The UI focuses on readability and responsive layout to make exploring books feel smooth on any device.",
       tech: ["React", "React Router", "Tailwind CSS"],
       live: "https://book-vibe-with-react-20022.netlify.app/",
-      github: "https://github.com/Mahfuz5634/Book-Vibe-With-React-Router-Project",
+      github:
+        "https://github.com/Mahfuz5634/Book-Vibe-With-React-Router-Project",
       image: bookImg,
     },
     {
