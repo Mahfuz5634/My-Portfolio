@@ -171,7 +171,7 @@ const Projects = () => {
                   <h3 className="text-lg sm:text-xl font-semibold text-slate-50">
                     {p.name}
                   </h3>
-                  <p className="mt-2 text-sm sm:text-[0.95rem] text-slate-300/90 leading-relaxed">
+                  <p className="mt-2 text-sm sm:text-[0.95rem] text-slate-300/90 leading-relaxed text-justify">
                     {p.desc}
                   </p>
                 </div>
