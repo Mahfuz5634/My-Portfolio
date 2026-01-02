@@ -1,8 +1,10 @@
 import React from "react";
+import ScrollReveal from "../ScrollBar/Scrollbar";
 
 const Education = () => {
   return (
-    <section id="education" className="py-10">
+  <ScrollReveal>
+      <section id="education" className="py-10">
       <div className="max-w-6xl mx-auto px-6">
         {/* label */}
         <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 mb-6 backdrop-blur">
@@ -55,6 +57,7 @@ const Education = () => {
         </div>
       </div>
     </section>
+  </ScrollReveal>
   );
 };
 

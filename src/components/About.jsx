@@ -1,8 +1,10 @@
 import React from "react";
+import ScrollReveal from "../ScrollBar/Scrollbar";
 
 const About = () => {
   return (
-    <section id="about" className="pt-4 pb-12">
+   <ScrollReveal>
+     <section id="about" className="pt-4 pb-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section label */}
         <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 mb-5 backdrop-blur">
@@ -51,6 +53,7 @@ const About = () => {
         </div>
       </div>
     </section>
+   </ScrollReveal>
   );
 };
 

@@ -13,6 +13,7 @@ import {
   SiCplusplus,
   SiPython,
 } from "react-icons/si";
+import ScrollReveal from "../ScrollBar/Scrollbar";
 
 const Skills = () => {
   const skills = [
@@ -32,7 +33,8 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-10">
+   <ScrollReveal>
+     <section id="skills" className="py-10">
       <div className="max-w-6xl mx-auto px-6">
         <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 mb-6 backdrop-blur">
           <span className="h-2 w-2 rounded-full bg-blue-400" />
@@ -66,6 +68,7 @@ const Skills = () => {
         </div>
       </div>
     </section>
+   </ScrollReveal>
   );
 };
 

@@ -1,8 +1,10 @@
 import React from "react";
+import ScrollReveal from "../ScrollBar/Scrollbar";
 
 export default function Footer() {
   return (
-    <footer className="mt-20 pb-8">
+   <ScrollReveal>
+     <footer className="mt-20 pb-8">
       <div className="max-w-6xl mx-auto px-6">
         {/* subtle line */}
         <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-600/60 to-transparent mb-4" />
@@ -22,5 +24,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+   </ScrollReveal>
   );
 }

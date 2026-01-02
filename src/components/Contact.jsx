@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import ScrollReveal from "../ScrollBar/Scrollbar";
 
 export default function Contact() {
   const formRef = useRef(null);
@@ -30,7 +31,8 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-10">
+   <ScrollReveal>
+     <section id="contact" className="py-10">
       <div className="max-w-6xl mx-auto px-6">
         <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 mb-6 backdrop-blur">
           <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -132,5 +134,6 @@ export default function Contact() {
         </form>
       </div>
     </section>
+   </ScrollReveal>
   );
 }

@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import image from "../assets/myPhoto.png";
 import { FiDownload } from "react-icons/fi";
 import { FiMail, FiPhone } from "react-icons/fi";
+import ScrollReveal from "../ScrollBar/Scrollbar";
 
 
 
@@ -51,7 +52,8 @@ const TypingText = ({ text }) => {
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden py-24 md:py-28">
+    <ScrollReveal>
+      <section className="relative overflow-hidden py-24 md:py-28">
       {/* Floating Particles Background */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -234,6 +236,7 @@ const Hero = () => {
         </motion.div>
       </div>
     </section>
+    </ScrollReveal>
   );
 };
 

@@ -8,6 +8,7 @@ import ecoImg from "../assets/eco.png";
 import englishImg from "../assets/english.png";
 import teaImg from "../assets/tea.png";
 import loanlinkImg from "../assets/microcredx.png"
+import ScrollReveal from "../ScrollBar/Scrollbar";
 
 const Projects = () => {
   const projects = [
@@ -30,6 +31,15 @@ const Projects = () => {
       github: "https://github.com/Mahfuz5634/MicroCredX-Project-FrontendPart",
       image: loanlinkImg,
     },
+    {
+      name: "Smart Utility BD",
+      tagline: "Utility bills management",
+      desc: "A MERN-based utility management system that centralizes monthly Electricity, Gas, Water, and Internet bills. Users can add, update, and delete bills in real time, filter by category or status, and generate downloadable PDF summaries, making bill tracking and history review much easier.",
+      tech: ["React", "Firebase", "Tailwind CSS", "DaisyUI"],
+      live: "https://smart-utility-bd.netlify.app/",
+      github: "https://github.com/Mahfuz5634/SmartUtility-Project-ClientPart",
+      image: utilityImg,
+    },
 
     {
       name: "Kidz Corner",
@@ -46,15 +56,7 @@ const Projects = () => {
       github: "https://github.com/Mahfuz5634/Kidz-Corner-With-Firebase",
       image: kidzImg,
     },
-    {
-      name: "Smart Utility BD",
-      tagline: "Utility bills management",
-      desc: "A MERN-based utility management system that centralizes monthly Electricity, Gas, Water, and Internet bills. Users can add, update, and delete bills in real time, filter by category or status, and generate downloadable PDF summaries, making bill tracking and history review much easier.",
-      tech: ["React", "Firebase", "Tailwind CSS", "DaisyUI"],
-      live: "https://smart-utility-bd.netlify.app/",
-      github: "https://github.com/Mahfuz5634/SmartUtility-Project-ClientPart",
-      image: utilityImg,
-    },
+    
     {
       name: "Dragon News",
       tagline: "News portal with auth",
@@ -128,7 +130,8 @@ const Projects = () => {
   const goNext = () => setPage((p) => Math.min(totalPages, p + 1));
 
   return (
-    <section id="projects" className="py-10">
+  <ScrollReveal>
+      <section id="projects" className="py-10">
       <div className="max-w-6xl mx-auto px-6">
         {/* label */}
         <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 mb-6 backdrop-blur">
@@ -239,6 +242,7 @@ const Projects = () => {
         </div>
       </div>
     </section>
+  </ScrollReveal>
   );
 };
 
