@@ -100,7 +100,7 @@ export default function Contact() {
                       <h4 className="text-zinc-500 text-xs font-mono uppercase tracking-wider mb-1">
                         Email Address
                       </h4>
-                      <p className="text-white text-lg font-medium">
+                      <p className="text-white text-sm md:text-lg font-medium">
                         mahfuzur3456@gmail.com
                       </p>
                     </div>
@@ -127,7 +127,7 @@ export default function Contact() {
                       <h4 className="text-zinc-500 text-xs font-mono uppercase tracking-wider mb-1">
                         Phone Number
                       </h4>
-                      <p className="text-white text-lg font-medium">
+                      <p className="text-white text-sm md:text-lg font-medium">
                         +880 1687 848893
                       </p>
                     </div>
