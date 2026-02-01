@@ -13,6 +13,10 @@ const CustomCursor = () => {
   const cursorY = useSpring(mouseY, springConfig);
 
   useEffect(() => {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobile) return;
+
     const moveCursor = (e) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
@@ -65,7 +69,6 @@ const CustomCursor = () => {
         <div className="w-2 h-2 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
       </motion.div>
 
-      {/* 2. Outer Ring (Follows with spring delay) */}
       <motion.div
         style={{
           translateX: cursorX,
@@ -82,7 +85,7 @@ const CustomCursor = () => {
           borderColor: isHovered ? "transparent" : "rgba(255, 255, 255, 0.3)",
         }}
         transition={{ duration: 0.15 }}
-        className="fixed top-0 left-0 z-[9998] pointer-events-none w-8 h-8 border border-white/30 rounded-full"
+        className="fixed hidden md:block top-0 left-0 z-[9998] pointer-events-none w-8 h-8 border border-white/30 rounded-full"
       />
     </>
   );
