@@ -106,7 +106,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-zinc-400  text-lg leading-relaxed max-w-xl mb-10 border-l-2 border-zinc-800 pl-6"
+              className="text-zinc-400 text-pretty  text-lg leading-relaxed max-w-xl mb-10 border-l-2 border-zinc-800 pl-6"
             >
               I am a{" "}
               <strong className="text-zinc-200">Fullstack Developer</strong> and
