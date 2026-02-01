@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiGithub, FiExternalLink, FiCode, FiLayers } from "react-icons/fi";
+import ScrollReveal from "../ScrollBar/Scrollbar";
+
+// Import images (Keep your existing imports)
 import kidzImg from "../assets/kidz.png";
 import utilityImg from "../assets/smart.png";
 import dragonImg from "../assets/news.png";
@@ -7,242 +12,259 @@ import supportImg from "../assets/customer.png";
 import ecoImg from "../assets/eco.png";
 import englishImg from "../assets/english.png";
 import teaImg from "../assets/tea.png";
-import loanlinkImg from "../assets/microcredx.png"
-import ScrollReveal from "../ScrollBar/Scrollbar";
+import loanlinkImg from "../assets/microcredx.png";
+
+// --- DATA (Moved outside component for cleanliness) ---
+const projectsData = [
+  {
+    name: "MicroCredX",
+    category: "FinTech",
+    desc: "A comprehensive web-based microloan management system designed for NGOs. It enables role-based dashboards for borrowers, managers, and admins with payment integration and real-time tracking.",
+    tech: ["React", "Node.js", "MongoDB", "Stripe", "Framer Motion"],
+    live: "https://microcredx.vercel.app/",
+    github: "https://github.com/Mahfuz5634/MicroCredX-Project-FrontendPart",
+    image: loanlinkImg,
+  },
+  {
+    name: "Smart Utility BD",
+    category: "Management",
+    desc: "A MERN-based utility management system that centralizes monthly Electricity, Gas, Water, and Internet bills. Features include real-time updates, filtering, and PDF generation.",
+    tech: ["React", "Firebase", "Tailwind CSS", "DaisyUI"],
+    live: "https://smart-utility-bd.netlify.app/",
+    github: "https://github.com/Mahfuz5634/SmartUtility-Project-ClientPart",
+    image: utilityImg,
+  },
+  {
+    name: "Kidz Corner",
+    category: "E-Commerce",
+    desc: "A full-featured toy e-commerce platform. Users can browse toys, view details, and manage their collection. Includes secure authentication and protected routes.",
+    tech: ["React", "Firebase Auth", "Tailwind CSS", "DaisyUI"],
+    live: "https://kidz-corner-webapp.netlify.app/",
+    github: "https://github.com/Mahfuz5634/Kidz-Corner-With-Firebase",
+    image: kidzImg,
+  },
+  {
+    name: "Dragon News",
+    category: "Media",
+    desc: "A modern news portal allowing users to explore articles by category. Features Firebase authentication for reading full stories and a distraction-free reading layout.",
+    tech: ["React", "Firebase Auth", "Tailwind CSS"],
+    live: "https://dragon-news-firebase22.netlify.app/",
+    github: "https://github.com/Mahfuz5634/Dragon-News-With-Firebase-Project",
+    image: dragonImg,
+  },
+  {
+    name: "Book Vibe",
+    category: "Directory",
+    desc: "A book discovery interface where users can browse a curated collection. Features smooth navigation between read lists and wishlists using React Router.",
+    tech: ["React", "React Router", "Tailwind CSS"],
+    live: "https://book-vibe-with-react-20022.netlify.app/",
+    github: "https://github.com/Mahfuz5634/Book-Vibe-With-React-Router-Project",
+    image: bookImg,
+  },
+  {
+    name: "Customer Support App",
+    category: "Dashboard",
+    desc: "A support dashboard for managing customer tickets with status tracking. Interacts with APIs to demonstrate structured state management.",
+    tech: ["React", "API", "Tailwind CSS"],
+    live: "https://customer-support-react-2200.netlify.app/",
+    github: "https://github.com/Mahfuz5634/Customer-Support-Zone-Using-React",
+    image: supportImg,
+  },
+  {
+    name: "Eco World",
+    category: "Landing Page",
+    desc: "A JavaScript-driven landing page highlighting eco-friendly products. Focuses on DOM manipulation and dynamic content loading.",
+    tech: ["JavaScript", "HTML5", "CSS3"],
+    live: "https://mahfuz5634.github.io/Eco-World-Project/",
+    github: "https://github.com/Mahfuz5634/Eco-World-Project",
+    image: ecoImg,
+  },
+  {
+    name: "English Shikhi",
+    category: "Education",
+    desc: "Interactive vocabulary learning tool with text-to-speech. Demonstrates public API usage and DOM updates for a lightweight learning experience.",
+    tech: ["JavaScript", "Fetch API", "Tailwind CSS"],
+    live: "https://mahfuz5634.github.io/English-Shikhi-Project/",
+    github: "https://github.com/Mahfuz5634/English-Shikhi-Project",
+    image: englishImg,
+  },
+];
 
 const Projects = () => {
-  const projects = [
-    {
-      name: "MicroCredX",
-      tagline: "Microloan request & approval tracker system",
-      desc: "A comprehensive web-based microloan management system designed for NGOs and microloan providers. It enables borrowers to apply for loans, managers to review and approve applications, and admins to manage users, loans, and system settings through secure, role-based dashboards. The platform includes payment integration, real-time tracking, and a modern, responsive UI.",
-      tech: [
-        "React",
-        "React Router",
-        "Firebase Auth",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Stripe",
-        "Tailwind CSS",
-        "Framer Motion",
-      ],
-      live: "https://microcredx.vercel.app/",
-      github: "https://github.com/Mahfuz5634/MicroCredX-Project-FrontendPart",
-      image: loanlinkImg,
-    },
-    {
-      name: "Smart Utility BD",
-      tagline: "Utility bills management",
-      desc: "A MERN-based utility management system that centralizes monthly Electricity, Gas, Water, and Internet bills. Users can add, update, and delete bills in real time, filter by category or status, and generate downloadable PDF summaries, making bill tracking and history review much easier.",
-      tech: ["React", "Firebase", "Tailwind CSS", "DaisyUI"],
-      live: "https://smart-utility-bd.netlify.app/",
-      github: "https://github.com/Mahfuz5634/SmartUtility-Project-ClientPart",
-      image: utilityImg,
-    },
-
-    {
-      name: "Kidz Corner",
-      tagline: "Toy e-commerce platform",
-      desc: "A full-featured toy e-commerce platform where users can browse toys by category, view detailed product pages, and manage their own collection. It includes secure authentication, profile-based toy management, wishlist-like features, and protected routes for adding or editing items, all wrapped in a playful, responsive UI.",
-      tech: [
-        "React",
-        "React Router",
-        "Firebase Auth",
-        "Tailwind CSS",
-        "DaisyUI",
-      ],
-      live: "https://kidz-corner-webapp.netlify.app/",
-      github: "https://github.com/Mahfuz5634/Kidz-Corner-With-Firebase",
-      image: kidzImg,
-    },
-    
-    {
-      name: "Dragon News",
-      tagline: "News portal with auth",
-      desc: "A modern news portal that lets users explore articles by category and read full stories after signing in. The app uses Firebase email/password authentication, protected routes for detailed news views, and a clean layout to keep reading focused and distraction-free.",
-      tech: [
-        "React",
-        "React Router",
-        "Firebase Auth",
-        "Tailwind CSS",
-        "DaisyUI",
-      ],
-      live: "https://dragon-news-firebase22.netlify.app/",
-      github: "https://github.com/Mahfuz5634/Dragon-News-With-Firebase-Project",
-      image: dragonImg,
-    },
-    {
-      name: "Book Vibe",
-      tagline: "Book explorer",
-      desc: "A book discovery interface where users can browse a curated collection of books, see detailed information such as author and rating, and switch between different sections using React Router. The UI focuses on readability and responsive layout to make exploring books feel smooth on any device.",
-      tech: ["React", "React Router", "Tailwind CSS"],
-      live: "https://book-vibe-with-react-20022.netlify.app/",
-      github:
-        "https://github.com/Mahfuz5634/Book-Vibe-With-React-Router-Project",
-      image: bookImg,
-    },
-    {
-      name: "Customer Support App",
-      tagline: "Support ticket manager",
-      desc: "A support dashboard for managing customer tickets with clear status tracking and updates. Users can view ticket details, follow their progress through different states, and interact with data coming from APIs, showcasing structured state management and responsive layout.",
-      tech: ["React", "JavaScript", "API", "Tailwind CSS", "DaisyUI"],
-      live: "https://customer-support-react-2200.netlify.app/",
-      github: "https://github.com/Mahfuz5634/Customer-Support-Zone-Using-React",
-      image: supportImg,
-    },
-    {
-      name: "Eco World Project",
-      tagline: "Plants & eco products",
-      desc: "A JavaScript-driven landing page that highlights plants and eco-friendly products with interactive cards and dynamic content loading. It focuses on DOM manipulation, fetch API usage, and clean component sections to simulate a small product catalogue experience.",
-      tech: ["JavaScript", "HTML5", "CSS3", "Fetch API", "Tailwind"],
-      live: "https://mahfuz5634.github.io/Eco-World-Project/",
-      github: "https://github.com/Mahfuz5634/Eco-World-Project",
-      image: ecoImg,
-    },
-    {
-      name: "English Shikhi",
-      tagline: "Learn English vocabulary",
-      desc: "An interactive vocabulary learning tool that helps users practice English words with meanings, example sentences, synonyms, and text-to-speech playback. It demonstrates working with public APIs, DOM updates, and UX aimed at making learning lightweight and engaging.",
-      tech: ["JavaScript", "HTML5", "CSS3", "Fetch API", "Tailwind CSS"],
-      live: "https://mahfuz5634.github.io/English-Shikhi-Project/",
-      github: "https://github.com/Mahfuz5634/English-Shikhi-Project",
-      image: englishImg,
-    },
-    {
-      name: "Tea House Project",
-      tagline: "Tea shop landing page",
-      desc: "A static but polished tea shop landing page that showcases different tea products, featured sections, and client testimonials. It focuses on layout, typography, and responsive design using only HTML and CSS to create a visually pleasing marketing page.",
-      tech: ["HTML", "CSS"],
-      live: "https://mahfuz5634.github.io/Tea-House-Project/",
-      github: "https://github.com/Mahfuz5634/Tea-House-Project",
-      image: teaImg,
-    },
-  ];
-
   const [page, setPage] = useState(1);
   const perPage = 4;
-  const totalPages = Math.ceil(projects.length / perPage);
+  const totalPages = Math.ceil(projectsData.length / perPage);
   const start = (page - 1) * perPage;
-  const currentProjects = projects.slice(start, start + perPage);
+  const currentProjects = projectsData.slice(start, start + perPage);
 
   const goPrev = () => setPage((p) => Math.max(1, p - 1));
   const goNext = () => setPage((p) => Math.min(totalPages, p + 1));
 
   return (
-  <ScrollReveal>
-      <section id="projects" className="py-10">
-      <div className="max-w-6xl mx-auto px-6">
-        {/* label */}
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 mb-6 backdrop-blur">
-          <span className="h-2 w-2 rounded-full bg-blue-400 animate-pulse" />
-          <span className="text-xs font-medium uppercase tracking-[0.2em] text-slate-300/80">
-            Projects
-          </span>
-        </div>
+    <ScrollReveal>
+      <section id="projects" className="  relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#27272a_1px,transparent_1px),linear-gradient(to_bottom,#27272a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.1] pointer-events-none" />
 
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-2 text-slate-50">
-          Selected Work
-        </h2>
-        <p className="text-sm sm:text-base text-slate-300/85 mb-8 max-w-2xl">
-          A few projects that highlight full‑stack development, problem solving,
-          and UI work. Use the arrows to see more.
-        </p>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="mb-12 md:mb-16">
+            <div className="inline-flex items-center gap-2 mb-4">
+              <span className="w-8 h-[1px] bg-blue-500"></span>
+              <span className="text-blue-400 font-mono text-xs tracking-widest uppercase">
+                Selected Works
+              </span>
+            </div>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+              <div>
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+                  Built for <span className="text-zinc-500">performance.</span>
+                </h2>
+                <p className="text-zinc-400 max-w-lg leading-relaxed">
+                  A collection of projects highlighting full-stack architecture,
+                  responsive UI/UX design, and complex state management.
+                </p>
+              </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {currentProjects.map((p) => (
-            <article
-              key={p.name}
-              className="group rounded-3xl border border-white/10 bg-white/5 overflow-hidden backdrop-blur-xl shadow-[0_0_40px_rgba(15,23,42,0.75)] hover:border-blue-500/60 transition-all"
-            >
-              {/* image */}
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={p.image}
-                  alt={p.name}
-                  className="h-full w-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent opacity-80" />
-                <span className="absolute left-4 top-4 rounded-full bg-black/60 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-slate-200">
-                  {p.tagline}
+              <div className="hidden md:flex items-center gap-4 text-zinc-500 font-mono text-sm">
+                <span className="flex items-center gap-2">
+                  <FiLayers /> {projectsData.length} Projects
+                </span>
+                <span className="h-4 w-[1px] bg-zinc-800"></span>
+                <span className="flex items-center gap-2">
+                  <FiCode /> Production Ready
                 </span>
               </div>
+            </div>
+          </div>
 
-              {/* content */}
-              <div className="p-5 sm:p-6 flex flex-col gap-4">
-                <div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-slate-50">
-                    {p.name}
-                  </h3>
-                  <p className="mt-2 text-sm sm:text-[0.95rem] text-slate-300/90 leading-relaxed text-justify">
-                    {p.desc}
-                  </p>
-                </div>
+          <div className="min-h-[600px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={page}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="grid grid-cols-1 md:grid-cols-2 gap-8"
+              >
+                {currentProjects.map((project) => (
+                  <ProjectCard key={project.name} project={project} />
+                ))}
+              </motion.div>
+            </AnimatePresence>
+          </div>
 
-                {/* tech chips */}
-                <div className="flex flex-wrap gap-2">
-                  {p.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full bg-slate-900/70 border border-white/10 px-2.5 py-1 text-[11px] text-slate-200"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
+          <div className="mt-16 flex items-center justify-between border-t border-zinc-900 pt-8">
+            <span className="text-zinc-500 text-sm font-mono">
+              Showing {start + 1}-
+              {Math.min(start + perPage, projectsData.length)} of{" "}
+              {projectsData.length}
+            </span>
 
-                {/* actions */}
-                <div className="mt-1 flex items-center gap-3 text-sm">
-                  <a
-                    href={p.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 px-4 py-1.5 font-medium text-xs sm:text-sm text-white shadow-lg shadow-blue-500/30 hover:from-blue-600 hover:to-indigo-600 transition"
+            <div className="flex items-center gap-2">
+              <button
+                onClick={goPrev}
+                disabled={page === 1}
+                className="px-4 py-2 text-sm text-zinc-400 border border-zinc-800 rounded-md hover:bg-zinc-900 hover:text-white disabled:opacity-30 disabled:hover:bg-transparent transition-all"
+              >
+                Prev
+              </button>
+
+              <div className="flex gap-1">
+                {[...Array(totalPages)].map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setPage(i + 1)}
+                    className={`w-8 h-8 rounded-md text-xs font-mono transition-all ${
+                      page === i + 1
+                        ? "bg-blue-600 text-white"
+                        : "bg-zinc-900 text-zinc-500 hover:bg-zinc-800"
+                    }`}
                   >
-                    <span>Live</span>
-                    <span className="text-xs">↗</span>
-                  </a>
-                  <a
-                    href={p.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-white/5 px-3.5 py-1.5 text-xs sm:text-sm font-medium text-slate-100 hover:border-blue-400/70 transition"
-                  >
-                    <span>GitHub</span>
-                  </a>
-                </div>
+                    {i + 1}
+                  </button>
+                ))}
               </div>
-            </article>
-          ))}
-        </div>
 
-        {/* pagination */}
-        <div className="mt-8 flex items-center justify-center gap-4 text-xs sm:text-sm text-slate-300">
-          <button
-            onClick={goPrev}
-            disabled={page === 1}
-            className={`px-3 py-1.5 rounded-full border border-white/15 bg-white/5 hover:border-blue-400/70 transition ${
-              page === 1 ? "opacity-40 cursor-not-allowed" : ""
-            }`}
-          >
-            ← Previous
-          </button>
-          <span className="text-slate-400">
-            Page {page} of {totalPages}
+              <button
+                onClick={goNext}
+                disabled={page === totalPages}
+                className="px-4 py-2 text-sm text-zinc-400 border border-zinc-800 rounded-md hover:bg-zinc-900 hover:text-white disabled:opacity-30 disabled:hover:bg-transparent transition-all"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </ScrollReveal>
+  );
+};
+
+const ProjectCard = ({ project }) => {
+  return (
+    <article className="group relative bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden hover:border-zinc-700 transition-colors duration-300">
+      <div className="relative aspect-video overflow-hidden bg-zinc-950">
+        <img
+          src={project.image}
+          alt={project.name}
+          className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-90"></div>
+
+        <div className="absolute top-4 left-4">
+          <span className="px-3 py-1 bg-black/50 backdrop-blur-md border border-white/10 text-xs font-mono text-blue-300 rounded-full uppercase tracking-wider">
+            {project.category}
           </span>
-          <button
-            onClick={goNext}
-            disabled={page === totalPages}
-            className={`px-3 py-1.5 rounded-full border border-white/15 bg-white/5 hover:border-blue-400/70 transition ${
-              page === totalPages ? "opacity-40 cursor-not-allowed" : ""
-            }`}
-          >
-            Next →
-          </button>
         </div>
       </div>
-    </section>
-  </ScrollReveal>
+
+      <div className="p-6 md:p-8">
+        <div className="flex justify-between items-start mb-4">
+          <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
+            {project.name}
+          </h3>
+
+          <div className="flex gap-3">
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noreferrer"
+              className="text-zinc-500 hover:text-white transition-colors"
+            >
+              <FiGithub size={20} />
+            </a>
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noreferrer"
+              className="text-zinc-500 hover:text-white transition-colors"
+            >
+              <FiExternalLink size={20} />
+            </a>
+          </div>
+        </div>
+
+        <p className="text-zinc-400 text-sm leading-relaxed mb-6 line-clamp-3">
+          {project.desc}
+        </p>
+
+        <div className="flex flex-wrap gap-2 mt-auto">
+          {project.tech.slice(0, 4).map((tech) => (
+            <span
+              key={tech}
+              className="px-2.5 py-1 text-[10px] font-mono text-zinc-500 bg-zinc-800/50 border border-zinc-700/50 rounded-md"
+            >
+              {tech}
+            </span>
+          ))}
+          {project.tech.length > 4 && (
+            <span className="px-2.5 py-1 text-[10px] font-mono text-zinc-500">
+              +{project.tech.length - 4}
+            </span>
+          )}
+        </div>
+      </div>
+    </article>
   );
 };
 

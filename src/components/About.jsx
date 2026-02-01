@@ -1,59 +1,98 @@
 import React from "react";
 import ScrollReveal from "../ScrollBar/Scrollbar";
 
+import { AiOutlineCode, AiFillProject, AiOutlineTrophy } from "react-icons/ai";
+import { FiCpu } from "react-icons/fi";
+
 const About = () => {
   return (
-   <ScrollReveal>
-     <section id="about" className="pt-4 pb-12">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Section label */}
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 mb-5 backdrop-blur">
-          <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-xs font-medium uppercase tracking-[0.2em] text-slate-300/80">
-            About Me
-          </span>
-        </div>
-
-        {/* Glass card */}
-        <div className="relative w-full sm:max-w-4xl rounded-3xl border border-white/10 bg-white/5 px-5 sm:px-8 py-6 sm:py-8 backdrop-blur-xl shadow-[0_0_60px_rgba(37,99,235,0.25)]">
-          {/* subtle gradient line */}
-          <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/60 to-transparent" />
-
-          <p className="text-sm sm:text-base sm:text-justify text-slate-300/90 leading-relaxed mb-3">
-            I&apos;m a passionate Computer Science & Engineering student, competitive programmer, and web
-            developer from Bangladesh who enjoys turning ideas into interactive,
-            user‑friendly web applications.
-          </p>
-
-          <p className="text-sm sm:text-base sm:text-justify text-slate-300/90 leading-relaxed mb-3">
-            Over the years, I&apos;ve been consistently learning new
-            technologies, improving my coding skills, and solving challenging
-            problems. I love building projects that are clean, fast, and visually
-            appealing.
-          </p>
-
-          <p className="text-sm sm:text-base sm:text-justify text-slate-300/90 leading-relaxed mb-3">
-            When I&apos;m not coding, you&apos;ll find me exploring new tools,
-            reading about tech innovations, or practicing competitive programming
-            to sharpen my problem‑solving abilities.
-          </p>
-
-          <p className="text-sm sm:text-base sm:text-justify text-slate-300/90 leading-relaxed">
-            I&apos;m always eager to collaborate, learn, and grow while creating
-            meaningful digital experiences along the way.
-          </p>
-
-          {/* Small meta row */}
-          <div className="mt-5 flex flex-wrap items-center gap-3 text-xs sm:text-sm text-slate-300/80">
-            <span className="inline-flex items-center gap-2 rounded-full bg-slate-900/60 px-3 py-1 border border-white/10">
-              <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              <span>Web Dev &amp; Competitive Programming</span>
+    <ScrollReveal>
+      <section id="about" className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="h-px w-12 bg-zinc-700"></div>
+            <span className="text-zinc-400 uppercase tracking-widest text-sm font-medium">
+              01. About Me
             </span>
           </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+            <div className="space-y-6">
+              <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+                A disciplined{" "}
+                <span className="text-zinc-500">problem solver</span> <br />
+                building digital products.
+              </h3>
+
+              <div className="space-y-4 text-zinc-400 leading-relaxed text-base md:text-lg">
+                <p className="text-justify">
+                  I am a Computer Science student and Fullstack Developer based
+                  in Bangladesh. My journey started with a curiosity for how
+                  software scales, which led me down the rabbit hole of{" "}
+                  <strong className="text-zinc-100">
+                    Competitive Programming
+                  </strong>{" "}
+                  and system architecture.
+                </p>
+                <p className="text-justify">
+                  I don't just write code; I care about the{" "}
+                  <strong className="text-zinc-100">architecture</strong>,
+                  scalability, and the micro-interactions that make a user
+                  experience feel seamless.
+                </p>
+                <p className="text-justify">
+                  Whether I'm solving complex algorithmic problems (DSA) or
+                  pixel-pushing in CSS, I approach every challenge with a focus
+                  on performance and clean code principles.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group">
+                <div className="h-10 w-10 rounded-lg bg-blue-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <AiOutlineTrophy className="text-blue-400 text-xl" />
+                </div>
+                <h4 className="text-2xl font-bold text-white mb-1">700+</h4>
+                <p className="text-xs text-zinc-500 uppercase tracking-wide">
+                  DSA Problems Solved
+                </p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group">
+                <div className="h-10 w-10 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <AiFillProject className="text-emerald-400 text-xl" />
+                </div>
+                <h4 className="text-2xl font-bold text-white mb-1">5+</h4>
+                <p className="text-xs text-zinc-500 uppercase tracking-wide">
+                  Production Projects
+                </p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group">
+                <div className="h-10 w-10 rounded-lg bg-purple-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <AiOutlineCode className="text-purple-400 text-xl" />
+                </div>
+                <h4 className="text-2xl font-bold text-white mb-1">03+</h4>
+                <p className="text-xs text-zinc-500 uppercase tracking-wide">
+                  Years Coding
+                </p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group">
+                <div className="h-10 w-10 rounded-lg bg-orange-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <FiCpu className="text-orange-400 text-xl" />
+                </div>
+                <h4 className="text-2xl font-bold text-white mb-1">MERN</h4>
+                <p className="text-xs text-zinc-500 uppercase tracking-wide">
+                  Primary Stack
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-   </ScrollReveal>
+      </section>
+    </ScrollReveal>
   );
 };
 

@@ -13,62 +13,104 @@ import {
   SiCplusplus,
   SiPython,
 } from "react-icons/si";
+import { FiCpu, FiLayout, FiDatabase } from "react-icons/fi";
 import ScrollReveal from "../ScrollBar/Scrollbar";
 
 const Skills = () => {
-  const skills = [
-    { name: "JavaScript", icon: SiJavascript },
-    { name: "React", icon: SiReact },
-    { name: "Next.js", icon: SiNextdotjs },
-    { name: "Node.js", icon: SiNodedotjs },
-    { name: "Tailwind CSS", icon: SiTailwindcss },
-    { name: "MongoDB", icon: SiMongodb },
-    { name: "Firebase", icon: SiFirebase },
-    { name: "Git", icon: SiGit },
-    { name: "HTML", icon: SiHtml5 },
-    { name: "CSS", icon: SiCss3 },
-    { name: "C++", icon: SiCplusplus },
-    { name: "Python", icon: SiPython },
-    
+  const skillCategories = [
+    {
+      title: "Frontend Engineering",
+      icon: FiLayout,
+      skills: [
+        { name: "React", icon: SiReact, color: "text-cyan-400" },
+        { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+        { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-400" },
+        { name: "HTML5", icon: SiHtml5, color: "text-orange-500" },
+        { name: "CSS3", icon: SiCss3, color: "text-blue-500" },
+      ],
+    },
+    {
+      title: "Backend & Database",
+      icon: FiDatabase,
+      skills: [
+        { name: "Node.js", icon: SiNodedotjs, color: "text-green-500" },
+        { name: "MongoDB", icon: SiMongodb, color: "text-green-500" },
+        { name: "Firebase", icon: SiFirebase, color: "text-yellow-500" },
+      ],
+    },
+    {
+      title: "Languages & Tools",
+      icon: FiCpu,
+      skills: [
+        { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
+        { name: "C++", icon: SiCplusplus, color: "text-blue-600" },
+        { name: "Python", icon: SiPython, color: "text-blue-400" },
+        { name: "Git", icon: SiGit, color: "text-red-500" },
+      ],
+    },
   ];
 
   return (
-   <ScrollReveal>
-     <section id="skills" className="py-10">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 mb-6 backdrop-blur">
-          <span className="h-2 w-2 rounded-full bg-blue-400" />
-          <span className="text-xs font-medium uppercase tracking-[0.2em] text-slate-300/80">
-            Skills
-          </span>
-        </div>
+    <ScrollReveal>
+      <section id="skills" className=" relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#27272a_1px,transparent_1px),linear-gradient(to_bottom,#27272a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.1] pointer-events-none" />
 
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-2 text-slate-50">
-          Tools & Technologies
-        </h2>
-        <p className="text-sm sm:text-base text-slate-300/85 mb-8 max-w-2xl">
-          A mix of languages, frameworks, and tools used to build modern,
-          performant, and visually polished web applications.
-        </p>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
-          {skills.map(({ name, icon: Icon }) => (
-            <div
-              key={name}
-              className="group flex flex-col items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-5 backdrop-blur-md shadow-[0_0_25px_rgba(15,23,42,0.6)] hover:border-blue-500/60 hover:shadow-[0_0_35px_rgba(37,99,235,0.65)] transition-all"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-900/70 text-2xl text-blue-400 group-hover:text-white group-hover:bg-gradient-to-br group-hover:from-blue-500 group-hover:to-indigo-500 transition-colors">
-                <Icon />
-              </div>
-              <span className="text-sm sm:text-base font-medium text-slate-100">
-                {name}
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="mb-12 md:mb-16">
+            <div className="inline-flex items-center gap-2 mb-4">
+              <span className="w-8 h-[1px] bg-blue-500"></span>
+              <span className="text-blue-400 font-mono text-sm tracking-widest uppercase">
+                Tech Stack
               </span>
             </div>
-          ))}
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Tools & Technologies
+            </h2>
+            <p className="text-zinc-400 max-w-2xl leading-relaxed">
+              A comprehensive list of languages, frameworks, and tools I use to
+              build performant, scalable, and modern web applications.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {skillCategories.map((category, idx) => (
+              <div
+                key={idx}
+                className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 hover:border-zinc-700 transition-colors duration-300"
+              >
+                <div className="flex items-center gap-3 mb-6 pb-4 border-b border-zinc-800">
+                  <div className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-blue-400">
+                    <category.icon size={20} />
+                  </div>
+                  <h3 className="text-lg font-semibold text-zinc-100">
+                    {category.title}
+                  </h3>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  {category.skills.map((skill) => (
+                    <div
+                      key={skill.name}
+                      className="group flex items-center gap-3 p-3 rounded-lg bg-zinc-950 border border-zinc-800/50 hover:border-zinc-700 hover:bg-zinc-900 transition-all duration-300 cursor-default"
+                    >
+                      <div
+                        className={`text-xl text-zinc-500 group-hover:${skill.color} transition-colors duration-300`}
+                      >
+                        <skill.icon />
+                      </div>
+
+                      <span className="text-sm font-medium text-zinc-400 group-hover:text-zinc-200 transition-colors">
+                        {skill.name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-   </ScrollReveal>
+      </section>
+    </ScrollReveal>
   );
 };
 
