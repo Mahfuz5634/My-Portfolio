@@ -144,9 +144,9 @@ export default function Contact() {
               </div>
 
               <div className="mt-12 pt-8 border-t border-zinc-900 flex gap-4">
-                <SocialLink href="#" icon={FiGithub} />
-                <SocialLink href="#" icon={FiLinkedin} />
-                <SocialLink href="#" icon={FiTwitter} />
+                <SocialLink href="https://github.com/Mahfuz5634" icon={FiGithub} />
+                <SocialLink href="https://www.linkedin.com/in/md-mahfuz-dev/" icon={FiLinkedin} />
+                
               </div>
             </div>
 
