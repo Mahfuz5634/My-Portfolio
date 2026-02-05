@@ -15,6 +15,7 @@ import ScrollReveal from "../ScrollBar/Scrollbar";
 import pic1 from "../assets/bubt-2025.jfif";
 import pic2 from "../assets/uits-intra.jfif";
 import pic3 from "../assets/aust-codeclash.jfif";
+import pic4 from "../assets/uap.jpg";
 
 const CompetitiveProgramming = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -96,6 +97,15 @@ const CompetitiveProgramming = () => {
       location: "AUST Grounds",
       caption: "Focused on solving the critical dynamic programming problem.",
       src: pic3,
+    },
+    {
+      id: 4,
+      title: "Uap Inter-University",
+      subtitle: "Contest Moments",
+      date: "Jan 2024",
+      location: "UAP Grounds",
+      caption: "Focused on solving the critical dynamic programming problem.",
+      src: pic4,
     },
   ];
 
