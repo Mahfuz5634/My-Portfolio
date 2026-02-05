@@ -54,7 +54,9 @@ const App = () => {
                 <Projects />
               </section>
 
-              <Skills />
+             <section id="tech-stack">
+                <Skills />
+              </section>
 
               <section id="competitive-programming">
                 <CompetitiveProgramming />
