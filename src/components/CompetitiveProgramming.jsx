@@ -79,18 +79,10 @@ const CompetitiveProgramming = () => {
       location: "BUBT Campus",
       caption: "Team UITS_CodeVengers battling against 100+ universities.",
       src: pic1,
+
     },
     {
       id: 2,
-      title: "UITS Intra-University",
-      subtitle: "2nd Runner Up",
-      date: "Feb 2025",
-      location: "UITS Lab 4",
-      caption: "Secured 3rd place with Team UITS_Bitwisers.",
-      src: pic2,
-    },
-    {
-      id: 3,
       title: "Aust Inter-University",
       subtitle: "Contest Moments",
       date: "Jan 2025",
@@ -98,6 +90,16 @@ const CompetitiveProgramming = () => {
       caption: "Focused on solving the critical dynamic programming problem.",
       src: pic3,
     },
+    {
+      id: 3,
+      title: "UITS Intra-University",
+      subtitle: "2nd Runner Up",
+      date: "Feb 2025",
+      location: "UITS Lab 4",
+      caption: "Secured 3rd place with Team UITS_Bitwisers.",
+      src: pic2,
+    },
+    
     {
       id: 4,
       title: "Uap Inter-University",
