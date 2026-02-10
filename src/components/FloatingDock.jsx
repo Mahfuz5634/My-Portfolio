@@ -21,13 +21,13 @@ const links = [
   {
     title: "GitHub",
     icon: <FiGithub />,
-    href: "https://github.com",
+    href: "https://github.com/Mahfuz5634",
     external: true,
   },
   {
     title: "LinkedIn",
     icon: <FiLinkedin />,
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/md-mahfuz-dev/",
     external: true,
   },
 ];
