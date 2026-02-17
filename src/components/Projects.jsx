@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiGithub, FiExternalLink, FiCode, FiLayers } from "react-icons/fi";
 import ScrollReveal from "../ScrollBar/Scrollbar";
 
-// Import images (Keep your existing imports)
 import kidzImg from "../assets/kidz.png";
 import utilityImg from "../assets/smart.png";
 import dragonImg from "../assets/news.png";
@@ -11,10 +10,8 @@ import bookImg from "../assets/book.png";
 import supportImg from "../assets/customer.png";
 import ecoImg from "../assets/eco.png";
 import englishImg from "../assets/english.png";
-import teaImg from "../assets/tea.png";
 import loanlinkImg from "../assets/microcredx.png";
 
-// --- DATA (Moved outside component for cleanliness) ---
 const projectsData = [
   {
     name: "MicroCredX",
@@ -102,7 +99,7 @@ const Projects = () => {
 
   return (
     <ScrollReveal>
-      <section id="projects" className="  relative overflow-hidden">
+      <section id="projects" className="relative overflow-hidden py-10">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#27272a_1px,transparent_1px),linear-gradient(to_bottom,#27272a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.1] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -128,15 +125,11 @@ const Projects = () => {
                 <span className="flex items-center gap-2">
                   <FiLayers /> {projectsData.length} Projects
                 </span>
-                <span className="h-4 w-[1px] bg-zinc-800"></span>
-                <span className="flex items-center gap-2">
-                  <FiCode /> Production Ready
-                </span>
               </div>
             </div>
           </div>
 
-          <div className="min-h-[600px]">
+          <div className="min-h-[500px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={page}
@@ -144,7 +137,7 @@ const Projects = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="grid grid-cols-1 md:grid-cols-2 gap-8"
+                className="grid grid-cols-1 md:grid-cols-2 gap-6"
               >
                 {currentProjects.map((project) => (
                   <ProjectCard key={project.name} project={project} />
@@ -153,7 +146,7 @@ const Projects = () => {
             </AnimatePresence>
           </div>
 
-          <div className="mt-16 flex items-center justify-between border-t border-zinc-900 pt-8">
+          <div className="mt-12 flex items-center justify-between border-t border-zinc-900 pt-6">
             <span className="text-zinc-500 text-sm font-mono">
               Showing {start + 1}-
               {Math.min(start + perPage, projectsData.length)} of{" "}
@@ -202,25 +195,26 @@ const Projects = () => {
 
 const ProjectCard = ({ project }) => {
   return (
-    <article className="group relative bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden hover:border-zinc-700 transition-colors duration-300">
-      <div className="relative aspect-video overflow-hidden bg-zinc-950">
+    <article className="group relative bg-zinc-900/40 border border-zinc-800 rounded-lg overflow-hidden hover:border-zinc-600 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 hover:-translate-y-1">
+      <div className="relative h-48 overflow-hidden bg-zinc-950">
         <img
           src={project.image}
           alt={project.name}
-          className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+          className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-90"></div>
 
-        <div className="absolute top-4 left-4">
-          <span className="px-3 py-1 bg-black/50 backdrop-blur-md border border-white/10 text-xs font-mono text-blue-300 rounded-full uppercase tracking-wider">
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-transparent to-transparent"></div>
+
+        <div className="absolute top-3 left-3">
+          <span className="px-2 py-1 bg-zinc-950/80 backdrop-blur border border-zinc-700/50 text-[10px] font-mono text-blue-300 rounded uppercase tracking-wider">
             {project.category}
           </span>
         </div>
       </div>
 
-      <div className="p-6 md:p-8">
-        <div className="flex justify-between items-start mb-4">
-          <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
+      <div className="p-5">
+        <div className="flex justify-between items-start mb-3">
+          <h3 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
             {project.name}
           </h3>
 
@@ -229,36 +223,38 @@ const ProjectCard = ({ project }) => {
               href={project.github}
               target="_blank"
               rel="noreferrer"
-              className="text-zinc-500 hover:text-white transition-colors"
+              className="text-zinc-500 hover:text-white hover:bg-zinc-800 p-1.5 rounded-full transition-all"
+              title="View Code"
             >
-              <FiGithub size={20} />
+              <FiGithub size={18} />
             </a>
             <a
               href={project.live}
               target="_blank"
               rel="noreferrer"
-              className="text-zinc-500 hover:text-white transition-colors"
+              className="text-zinc-500 hover:text-blue-400 hover:bg-zinc-800 p-1.5 rounded-full transition-all"
+              title="Live Demo"
             >
-              <FiExternalLink size={20} />
+              <FiExternalLink size={18} />
             </a>
           </div>
         </div>
 
-        <p className="text-zinc-400 text-sm leading-relaxed mb-6 line-clamp-3">
+        <p className="text-zinc-400 text-sm leading-snug mb-4 line-clamp-2 h-10">
           {project.desc}
         </p>
 
-        <div className="flex flex-wrap gap-2 mt-auto">
+        <div className="flex flex-wrap gap-2">
           {project.tech.slice(0, 4).map((tech) => (
             <span
               key={tech}
-              className="px-2.5 py-1 text-[10px] font-mono text-zinc-500 bg-zinc-800/50 border border-zinc-700/50 rounded-md"
+              className="px-2 py-0.5 text-[10px] font-mono text-zinc-400 bg-zinc-800/40 border border-zinc-700/50 rounded hover:border-blue-500/30 transition-colors"
             >
               {tech}
             </span>
           ))}
           {project.tech.length > 4 && (
-            <span className="px-2.5 py-1 text-[10px] font-mono text-zinc-500">
+            <span className="px-2 py-0.5 text-[10px] font-mono text-zinc-500">
               +{project.tech.length - 4}
             </span>
           )}
