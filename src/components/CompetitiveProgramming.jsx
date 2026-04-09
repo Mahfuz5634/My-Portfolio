@@ -29,7 +29,7 @@ const CompetitiveProgramming = () => {
       color: "text-blue-500",
       borderColor: "group-hover:border-blue-500/50",
       bgHover: "group-hover:bg-blue-500/10",
-      stats: "Max Rating: 1380 (Pupil)",
+      stats: "Max Rating: 1236 (Pupil)",
     },
     {
       name: "LeetCode",
@@ -79,7 +79,6 @@ const CompetitiveProgramming = () => {
       location: "BUBT Campus",
       caption: "Team UITS_CodeVengers battling against 100+ universities.",
       src: pic1,
-
     },
     {
       id: 2,
@@ -99,7 +98,6 @@ const CompetitiveProgramming = () => {
       caption: "Secured 3rd place with Team UITS_Bitwisers.",
       src: pic2,
     },
-    
     {
       id: 4,
       title: "Uap Inter-University",
@@ -200,6 +198,9 @@ const CompetitiveProgramming = () => {
                       </h4>
                       <p className="text-zinc-500 text-sm font-mono mt-1 group-hover:text-zinc-300 transition-colors">
                         @{platform.handle}
+                      </p>
+                      <p className={`mt-3 text-sm font-medium ${platform.color} opacity-90`}>
+                        {platform.stats}
                       </p>
                     </div>
                   </a>
