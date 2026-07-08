@@ -157,7 +157,7 @@ const Projects = () => {
               <button
                 onClick={goPrev}
                 disabled={page === 1}
-                className="px-4 py-2 text-sm text-zinc-400 border border-zinc-800 rounded-md hover:bg-zinc-900 hover:text-white disabled:opacity-30 disabled:hover:bg-transparent transition-all"
+                className="px-4 py-2 text-sm text-zinc-400 border border-zinc-800 rounded-full hover:bg-zinc-900 hover:text-white disabled:opacity-30 disabled:hover:bg-transparent hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 cursor-pointer"
               >
                 Prev
               </button>
@@ -167,10 +167,10 @@ const Projects = () => {
                   <button
                     key={i}
                     onClick={() => setPage(i + 1)}
-                    className={`w-8 h-8 rounded-md text-xs font-mono transition-all ${
+                    className={`w-8 h-8 rounded-full text-xs font-mono transition-all duration-200 cursor-pointer ${
                       page === i + 1
-                        ? "bg-blue-600 text-white"
-                        : "bg-zinc-900 text-zinc-500 hover:bg-zinc-800"
+                        ? "bg-blue-600 text-white shadow-lg shadow-blue-600/20"
+                        : "bg-zinc-900 text-zinc-500 hover:bg-zinc-800 hover:text-zinc-300"
                     }`}
                   >
                     {i + 1}
@@ -181,7 +181,7 @@ const Projects = () => {
               <button
                 onClick={goNext}
                 disabled={page === totalPages}
-                className="px-4 py-2 text-sm text-zinc-400 border border-zinc-800 rounded-md hover:bg-zinc-900 hover:text-white disabled:opacity-30 disabled:hover:bg-transparent transition-all"
+                className="px-4 py-2 text-sm text-zinc-400 border border-zinc-800 rounded-full hover:bg-zinc-900 hover:text-white disabled:opacity-30 disabled:hover:bg-transparent hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 cursor-pointer"
               >
                 Next
               </button>
@@ -195,69 +195,71 @@ const Projects = () => {
 
 const ProjectCard = ({ project }) => {
   return (
-    <article className="group relative bg-zinc-900/40 border border-zinc-800 rounded-lg overflow-hidden hover:border-zinc-600 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 hover:-translate-y-1">
-      <div className="relative h-48 overflow-hidden bg-zinc-950">
-        <img
-          src={project.image}
-          alt={project.name}
-          className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-        />
+    <article className="group relative bg-zinc-900/40 border border-zinc-800 rounded-2xl overflow-hidden hover:border-blue-500/30 hover:shadow-[0_0_50px_rgba(59,130,246,0.08)] hover:-translate-y-1.5 transition-all duration-350 flex flex-col justify-between">
+      <div>
+        <div className="relative h-48 overflow-hidden bg-zinc-950">
+          <img
+            src={project.image}
+            alt={project.name}
+            className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+          />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-transparent to-transparent"></div>
 
-        <div className="absolute top-3 left-3">
-          <span className="px-2 py-1 bg-zinc-950/80 backdrop-blur border border-zinc-700/50 text-[10px] font-mono text-blue-300 rounded uppercase tracking-wider">
-            {project.category}
-          </span>
-        </div>
-      </div>
-
-      <div className="p-5">
-        <div className="flex justify-between items-start mb-3">
-          <h3 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
-            {project.name}
-          </h3>
-
-          <div className="flex gap-3">
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noreferrer"
-              className="text-zinc-500 hover:text-white hover:bg-zinc-800 p-1.5 rounded-full transition-all"
-              title="View Code"
-            >
-              <FiGithub size={18} />
-            </a>
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noreferrer"
-              className="text-zinc-500 hover:text-blue-400 hover:bg-zinc-800 p-1.5 rounded-full transition-all"
-              title="Live Demo"
-            >
-              <FiExternalLink size={18} />
-            </a>
+          <div className="absolute top-3 left-3">
+            <span className="px-2.5 py-1 bg-zinc-950/80 backdrop-blur border border-zinc-800 text-[10px] font-mono text-blue-300 rounded-full uppercase tracking-wider">
+              {project.category}
+            </span>
           </div>
         </div>
 
-        <p className="text-zinc-400 text-sm leading-snug mb-4 line-clamp-2 h-10">
-          {project.desc}
-        </p>
+        <div className="p-6">
+          <div className="flex justify-between items-start mb-3">
+            <h3 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
+              {project.name}
+            </h3>
 
-        <div className="flex flex-wrap gap-2">
-          {project.tech.slice(0, 4).map((tech) => (
-            <span
-              key={tech}
-              className="px-2 py-0.5 text-[10px] font-mono text-zinc-400 bg-zinc-800/40 border border-zinc-700/50 rounded hover:border-blue-500/30 transition-colors"
-            >
-              {tech}
-            </span>
-          ))}
-          {project.tech.length > 4 && (
-            <span className="px-2 py-0.5 text-[10px] font-mono text-zinc-500">
-              +{project.tech.length - 4}
-            </span>
-          )}
+            <div className="flex gap-2">
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="text-zinc-500 hover:text-white hover:bg-zinc-800 p-2 rounded-full transition-all hover:scale-105 active:scale-95"
+                title="View Code"
+              >
+                <FiGithub size={16} />
+              </a>
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noreferrer"
+                className="text-zinc-500 hover:text-blue-400 hover:bg-zinc-800 p-2 rounded-full transition-all hover:scale-105 active:scale-95"
+                title="Live Demo"
+              >
+                <FiExternalLink size={16} />
+              </a>
+            </div>
+          </div>
+
+          <p className="text-zinc-400 text-sm leading-relaxed mb-6 line-clamp-2 h-10">
+            {project.desc}
+          </p>
+
+          <div className="flex flex-wrap gap-1.5">
+            {project.tech.slice(0, 4).map((tech) => (
+              <span
+                key={tech}
+                className="px-2 py-1 text-[10px] font-mono text-zinc-450 bg-zinc-950/60 border border-zinc-850 rounded hover:border-blue-500/20 hover:text-zinc-200 transition-colors duration-200 cursor-default"
+              >
+                {tech}
+              </span>
+            ))}
+            {project.tech.length > 4 && (
+              <span className="px-2 py-1 text-[10px] font-mono text-zinc-650 flex items-center">
+                +{project.tech.length - 4}
+              </span>
+            )}
+          </div>
         </div>
       </div>
     </article>

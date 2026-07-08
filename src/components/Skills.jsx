@@ -1,13 +1,20 @@
 import React from "react";
 import {
   SiJavascript,
+  SiTypescript,
   SiReact,
   SiNextdotjs,
   SiNodedotjs,
+  SiExpress,
   SiTailwindcss,
   SiMongodb,
+  SiMongoose,
+  SiPostgresql,
+  SiPrisma,
   SiFirebase,
   SiGit,
+  SiDocker,
+  SiPostman,
   SiHtml5,
   SiCss3,
   SiCplusplus,
@@ -34,7 +41,11 @@ const Skills = () => {
       icon: FiDatabase,
       skills: [
         { name: "Node.js", icon: SiNodedotjs, color: "text-green-500" },
+        { name: "Express", icon: SiExpress, color: "text-white" },
         { name: "MongoDB", icon: SiMongodb, color: "text-green-500" },
+        { name: "Mongoose", icon: SiMongoose, color: "text-red-600" },
+        { name: "PostgreSQL", icon: SiPostgresql, color: "text-sky-400" },
+        { name: "Prisma", icon: SiPrisma, color: "text-teal-400" },
         { name: "Firebase", icon: SiFirebase, color: "text-yellow-500" },
       ],
     },
@@ -43,9 +54,12 @@ const Skills = () => {
       icon: FiCpu,
       skills: [
         { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
+        { name: "TypeScript", icon: SiTypescript, color: "text-blue-400" },
         { name: "C++", icon: SiCplusplus, color: "text-blue-600" },
         { name: "Python", icon: SiPython, color: "text-blue-400" },
         { name: "Git", icon: SiGit, color: "text-red-500" },
+        { name: "Docker", icon: SiDocker, color: "text-sky-500" },
+        { name: "Postman", icon: SiPostman, color: "text-orange-500" },
       ],
     },
   ];
@@ -91,15 +105,15 @@ const Skills = () => {
                   {category.skills.map((skill) => (
                     <div
                       key={skill.name}
-                      className="group flex items-center gap-3 p-3 rounded-lg bg-zinc-950 border border-zinc-800/50 hover:border-zinc-700 hover:bg-zinc-900 transition-all duration-300 cursor-default"
+                      className="group flex items-center gap-3 p-3 rounded-xl bg-zinc-950 border border-zinc-900/55 hover:border-blue-500/25 hover:bg-zinc-900/60 hover:scale-[1.02] transition-all duration-300 cursor-default"
                     >
                       <div
-                        className={`text-xl text-zinc-500 group-hover:${skill.color} transition-colors duration-300`}
+                        className={`text-xl text-zinc-550 group-hover:${skill.color} transition-colors duration-300`}
                       >
                         <skill.icon />
                       </div>
 
-                      <span className="text-sm font-medium text-zinc-400 group-hover:text-zinc-200 transition-colors">
+                      <span className="text-xs font-semibold text-zinc-400 group-hover:text-zinc-200 transition-colors">
                         {skill.name}
                       </span>
                     </div>

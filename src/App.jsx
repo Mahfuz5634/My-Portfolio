@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import CompetitiveProgramming from "./components/CompetitiveProgramming";
@@ -46,6 +47,10 @@ const App = () => {
             <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-32 pb-24">
               <section id="about">
                 <About />
+              </section>
+
+              <section id="experience">
+                <Experience />
               </section>
 
               <Education />

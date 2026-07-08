@@ -16,6 +16,7 @@ import pic1 from "../assets/bubt-2025.jfif";
 import pic2 from "../assets/uits-intra.jfif";
 import pic3 from "../assets/aust-codeclash.jfif";
 import pic4 from "../assets/uap.jpg";
+import pic5 from "../assets/nsu_contest.jfif";
 
 const CompetitiveProgramming = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -73,21 +74,21 @@ const CompetitiveProgramming = () => {
   const galleryPhotos = [
     {
       id: 1,
+      title: "NSU Inter-University",
+      subtitle: "Contest Moments",
+      date: "June 2026",
+      location: "NSU Campus",
+      caption: "Collaborating with team members to solve challenging programming problems.",
+      src: pic5,
+    },
+    {
+      id: 2,
       title: "BUBT Inter-University",
       subtitle: "Top 50 Achieved",
       date: "Nov 2025",
       location: "BUBT Campus",
       caption: "Team UITS_CodeVengers battling against 100+ universities.",
       src: pic1,
-    },
-    {
-      id: 2,
-      title: "Aust Inter-University",
-      subtitle: "Contest Moments",
-      date: "Jan 2025",
-      location: "AUST Grounds",
-      caption: "Focused on solving the critical dynamic programming problem.",
-      src: pic3,
     },
     {
       id: 3,
@@ -100,6 +101,15 @@ const CompetitiveProgramming = () => {
     },
     {
       id: 4,
+      title: "Aust Inter-University",
+      subtitle: "Contest Moments",
+      date: "Jan 2025",
+      location: "AUST Grounds",
+      caption: "Focused on solving the critical dynamic programming problem.",
+      src: pic3,
+    },
+    {
+      id: 5,
       title: "Uap Inter-University",
       subtitle: "Contest Moments",
       date: "Jan 2024",

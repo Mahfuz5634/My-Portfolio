@@ -9,11 +9,13 @@ import {
   FiLinkedin,
   FiTerminal,
   FiLayers,
+  FiBriefcase,
 } from "react-icons/fi";
 
 const links = [
   { title: "Home", icon: <FiHome />, href: "#home" },
   { title: "About", icon: <FiUser />, href: "#about" },
+  { title: "Experience", icon: <FiBriefcase />, href: "#experience" },
   { title: "Projects", icon: <FiCode />, href: "#projects" },
   { title: "Stack", icon: <FiLayers />, href: "#tech-stack" },
   { title: "CP", icon: <FiTerminal />, href: "#competitive-programming" },

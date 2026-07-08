@@ -49,7 +49,7 @@ const About = () => {
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group">
+              <div className="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800 hover:border-blue-500/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.08)] transition-all duration-350 group">
                 <div className="h-10 w-10 rounded-lg bg-blue-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <AiOutlineTrophy className="text-blue-400 text-xl" />
                 </div>
@@ -59,17 +59,17 @@ const About = () => {
                 </p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group">
+              <div className="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800 hover:border-emerald-500/30 hover:shadow-[0_0_30px_rgba(16,185,129,0.08)] transition-all duration-350 group">
                 <div className="h-10 w-10 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <AiFillProject className="text-emerald-400 text-xl" />
                 </div>
                 <h4 className="text-2xl font-bold text-white mb-1">5+</h4>
                 <p className="text-xs text-zinc-500 uppercase tracking-wide">
-                  Production Projects
+                  Completed Projects
                 </p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group">
+              <div className="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800 hover:border-purple-500/30 hover:shadow-[0_0_30px_rgba(168,85,247,0.08)] transition-all duration-350 group">
                 <div className="h-10 w-10 rounded-lg bg-purple-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <AiOutlineCode className="text-purple-400 text-xl" />
                 </div>
@@ -79,7 +79,7 @@ const About = () => {
                 </p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group">
+              <div className="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800 hover:border-orange-500/30 hover:shadow-[0_0_30px_rgba(249,115,22,0.08)] transition-all duration-350 group">
                 <div className="h-10 w-10 rounded-lg bg-orange-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <FiCpu className="text-orange-400 text-xl" />
                 </div>

@@ -90,10 +90,10 @@ export default function Contact() {
               <div className="space-y-6 flex-1">
                 <button
                   onClick={() => handleCopy("mahfuzur3456@gmail.com", "email")}
-                  className="w-full group flex items-center justify-between p-6 border border-zinc-800 bg-zinc-950/50 hover:bg-zinc-900 transition-all duration-300"
+                  className="w-full group flex items-center justify-between p-6 border border-zinc-800 bg-zinc-950/50 hover:bg-zinc-900 hover:border-blue-500/30 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(59,130,246,0.06)] rounded-2xl transition-all duration-300 cursor-pointer"
                 >
                   <div className="flex items-center gap-5">
-                    <div className="p-3 bg-zinc-900 border border-zinc-800 text-white group-hover:border-zinc-600 transition-colors">
+                    <div className="p-3 bg-zinc-900 border border-zinc-850 text-white rounded-xl group-hover:border-blue-500/20 group-hover:text-blue-400 transition-colors">
                       <FiMail size={22} />
                     </div>
                     <div className="text-left">
@@ -105,7 +105,7 @@ export default function Contact() {
                       </p>
                     </div>
                   </div>
-                  <div className="relative">
+                  <div className="relative mr-2">
                     <FiCopy
                       className={`text-zinc-500 transition-all ${copied === "email" ? "opacity-0 scale-50" : "opacity-100 scale-100"}`}
                     />
@@ -117,10 +117,10 @@ export default function Contact() {
 
                 <button
                   onClick={() => handleCopy("+880 1687 848893", "phone")}
-                  className="w-full group flex items-center justify-between p-6 border border-zinc-800 bg-zinc-950/50 hover:bg-zinc-900 transition-all duration-300"
+                  className="w-full group flex items-center justify-between p-6 border border-zinc-800 bg-zinc-950/50 hover:bg-zinc-900 hover:border-blue-500/30 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(59,130,246,0.06)] rounded-2xl transition-all duration-300 cursor-pointer"
                 >
                   <div className="flex items-center gap-5">
-                    <div className="p-3 bg-zinc-900 border border-zinc-800 text-white group-hover:border-zinc-600 transition-colors">
+                    <div className="p-3 bg-zinc-900 border border-zinc-850 text-white rounded-xl group-hover:border-blue-500/20 group-hover:text-blue-400 transition-colors">
                       <FiPhone size={22} />
                     </div>
                     <div className="text-left">
@@ -132,7 +132,7 @@ export default function Contact() {
                       </p>
                     </div>
                   </div>
-                  <div className="relative">
+                  <div className="relative mr-2">
                     <FiCopy
                       className={`text-zinc-500 transition-all ${copied === "phone" ? "opacity-0 scale-50" : "opacity-100 scale-100"}`}
                     />
@@ -154,7 +154,7 @@ export default function Contact() {
               <form
                 ref={formRef}
                 onSubmit={handleSubmit}
-                className="relative bg-zinc-950 border border-zinc-800 p-8 md:p-10 shadow-[0_0_50px_rgba(255,255,255,0.03)]"
+                className="relative bg-zinc-950 border border-zinc-850 p-8 md:p-10 shadow-[0_0_50px_rgba(255,255,255,0.02)] rounded-2xl overflow-hidden hover:border-zinc-750 transition-colors duration-300"
               >
                 <div className="absolute top-0 left-0 w-8 h-[1px] bg-white"></div>
                 <div className="absolute top-0 left-0 w-[1px] h-8 bg-white"></div>
@@ -221,12 +221,12 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={status === "sending" || status === "success"}
-                    className={`w-full h-14 mt-4 flex items-center justify-center gap-2 text-sm font-bold tracking-widest uppercase transition-all duration-500 ${
+                    className={`w-full h-14 mt-4 flex items-center justify-center gap-2 text-sm font-bold tracking-widest uppercase transition-all hover:scale-[1.02] active:scale-[0.98] duration-300 rounded-full cursor-pointer ${
                       status === "success"
                         ? "bg-black border border-white text-white cursor-default"
                         : status === "error"
                           ? "bg-black border border-zinc-800 text-zinc-400"
-                          : "bg-white text-black hover:bg-zinc-200"
+                          : "bg-white text-black hover:bg-zinc-100 shadow-lg shadow-white/5"
                     }`}
                   >
                     <AnimatePresence mode="wait">

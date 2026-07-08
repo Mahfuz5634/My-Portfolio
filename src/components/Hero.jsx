@@ -34,8 +34,11 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen bg-zinc-950 pt-10 pb-20 overflow-hidden flex flex-col justify-center">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#27272a_1px,transparent_1px),linear-gradient(to_bottom,#27272a_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.15]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#27272a_1px,transparent_1px),linear-gradient(to_bottom,#27272a_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.07]"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-950 via-transparent to-zinc-950"></div>
+        {/* Glow Effects */}
+        <div className="absolute top-[10%] left-[10%] w-[35rem] h-[35rem] bg-blue-500/10 rounded-full blur-[130px] mix-blend-screen pointer-events-none animate-pulse duration-[10000ms]"></div>
+        <div className="absolute bottom-[10%] right-[10%] w-[30rem] h-[30rem] bg-emerald-500/5 rounded-full blur-[110px] mix-blend-screen pointer-events-none"></div>
       </div>
 
       <div className="relative z-10 max-w-6xl w-full mx-auto px-6 h-full flex flex-col">
@@ -87,7 +90,7 @@ const Hero = () => {
             >
               <div className="h-px w-8 bg-blue-500"></div>
               <span className="font-mono text-xs text-blue-400 tracking-widest uppercase">
-                Mahfuz — Portfolio v1.0
+                Mahfuz — Portfolio
               </span>
             </motion.div>
 
@@ -98,7 +101,7 @@ const Hero = () => {
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.15] tracking-tight mb-6"
             >
               Engineering <br />
-              <span className="text-zinc-500">reliable & scalable</span> <br />
+              <span className="bg-gradient-to-r from-blue-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent font-extrabold">reliable & scalable</span> <br />
               web solutions.
             </motion.h1>
 
@@ -123,15 +126,15 @@ const Hero = () => {
             >
               <a
                 href="#projects"
-                className="px-6 py-3 bg-white text-zinc-950 font-semibold text-sm rounded-md hover:bg-zinc-200 transition-colors flex items-center gap-2"
+                className="group px-6 py-3 bg-white text-zinc-950 font-semibold text-sm rounded-full hover:bg-zinc-100 hover:scale-[1.03] active:scale-[0.97] transition-all flex items-center gap-2 shadow-lg shadow-white/5"
               >
-                Selected Work <FiArrowRight />
+                Selected Work <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a
                 href="https://drive.google.com/uc?export=download&id=19txK2JSGkRYKzEDmlZ7a7ZDVNV79eyZ3"
-                className="px-6 py-3 border border-zinc-700 text-zinc-300 font-medium text-sm rounded-md hover:border-zinc-500 hover:text-white transition-colors flex items-center gap-2 bg-zinc-900/50"
+                className="group px-6 py-3 border border-zinc-800 text-zinc-300 font-medium text-sm rounded-full hover:border-zinc-700 hover:text-white hover:scale-[1.03] active:scale-[0.97] transition-all flex items-center gap-2 bg-zinc-900/40 backdrop-blur-sm shadow-lg"
               >
-                Resume PDF <FiDownload />
+                Resume PDF <FiDownload className="group-hover:translate-y-0.5 transition-transform" />
               </a>
             </motion.div>
           </div>
@@ -142,7 +145,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="lg:col-span-4 relative w-full max-w-[320px] mx-auto lg:mr-0"
           >
-            <div className="relative bg-zinc-900 border border-zinc-800 rounded-xl p-2 shadow-2xl overflow-hidden group">
+            <div className="relative bg-zinc-900 border border-zinc-800 rounded-xl p-2 shadow-2xl overflow-hidden group transition-all duration-300 hover:border-blue-500/30 hover:shadow-[0_0_50px_rgba(59,130,246,0.15)]">
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-900/20 blur-[50px] rounded-full"></div>
 
               <div className="relative bg-zinc-950 rounded-lg overflow-hidden border border-zinc-800/50">

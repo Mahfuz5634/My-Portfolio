@@ -19,6 +19,30 @@ const Education = () => {
     "Software Engineering",
   ];
 
+  const certifications = [
+    {
+      title: "Complete Web Development Course",
+      issuer: "Programming Hero",
+      date: "Dec 2025",
+      credentialId: "WEB12-0156",
+      skills: ["Front-End Design", "React.js", "JavaScript", "HTML5", "CSS3", "Node.js", "Express.js", "MongoDB"],
+    },
+    {
+      title: "Git and Github",
+      issuer: "Simplilearn",
+      date: "Jul 2025",
+      credentialId: "KRrE8ro0VUb",
+      skills: ["Git", "GitHub", "Version Control", "Collaboration"],
+    },
+    {
+      title: "Introduction to Front End Development",
+      issuer: "Simplilearn",
+      date: "May 2025",
+      credentialId: "10193211",
+      skills: ["React.js", "JavaScript", "HTML5", "CSS3", "Web Development"],
+    },
+  ];
+
   return (
     <ScrollReveal>
       <section id="education" className="relative overflow-hidden py-10">
@@ -70,6 +94,10 @@ const Education = () => {
                       <FiMapPin className="text-zinc-400" />
                       <span>Dhaka, Bangladesh</span>
                     </div>
+                    <div className="flex items-center gap-2">
+                      <FiAward className="text-zinc-400" />
+                      <span>CGPA: 3.70 / 4.00</span>
+                    </div>
                   </div>
 
                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full">
@@ -110,6 +138,59 @@ const Education = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Professional Certifications */}
+          <div className="mt-16">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-px w-8 bg-blue-500"></div>
+              <h3 className="text-xl font-bold text-white tracking-tight uppercase font-mono text-sm tracking-widest text-blue-400">
+                Certifications
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {certifications.map((cert, index) => (
+                <div
+                  key={index}
+                  className="group relative bg-zinc-900/40 border border-zinc-800 rounded-2xl p-6 hover:border-blue-500/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.08)] hover:-translate-y-1.5 transition-all duration-350 flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-start justify-between gap-4 mb-4">
+                      <div className="p-3 bg-zinc-950 border border-zinc-850 text-blue-400 rounded-xl group-hover:border-blue-500/20 transition-all duration-300">
+                        <FiAward size={20} />
+                      </div>
+                      <span className="text-[10px] font-mono text-zinc-500 bg-zinc-950 px-2.5 py-1 rounded-full border border-zinc-850">
+                        {cert.date}
+                      </span>
+                    </div>
+
+                    <h4 className="text-lg font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">
+                      {cert.title}
+                    </h4>
+                    <p className="text-zinc-400 text-sm font-medium mb-4">
+                      {cert.issuer}
+                    </p>
+                  </div>
+
+                  <div className="mt-4">
+                    <div className="text-[10px] font-mono text-zinc-500 mb-3 uppercase tracking-wider">
+                      Credential ID: <span className="text-zinc-300 font-semibold">{cert.credentialId}</span>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {cert.skills.map((skill, sIndex) => (
+                        <span
+                          key={sIndex}
+                          className="px-2 py-1 text-[9px] font-mono text-zinc-500 bg-zinc-950/80 border border-zinc-850 rounded hover:border-zinc-700 hover:text-zinc-200 transition-colors duration-200 cursor-default"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
